@@ -2,19 +2,19 @@ SRE_VERSION = "0.1";
 local SimpleRareElite = CreateFrame('Frame', 'SimpleRareElite', UIParent)
 local TargetFrame
 
-
 -- Set Textures 
 local function SetSimpleRareElite(Texture)
 		
-	SimpleRareElite.Texture:SetTexture('Interface\\AddOns\\SimpleRareElite\\Textures\\')
+	SimpleRareElite.Texture:SetTexture('Interface\\AddOns\\SimpleRareElite\\Textures\\'..Texture)
 	SimpleRareElite.Texture:SetTexCoord(0, 1, 0, 1)
 	SimpleRareElite:ClearAllPoints()	
-			
+	
+	--Modern		
 	SimpleRareElite:SetSize(100, 100)
 	SimpleRareElite:SetPoint('TOPRIGHT', TargetFrame, 'TOPRIGHT', 36, 8)			
-		
+	
 	SimpleRareElite:Show()	
-		
+	
 end
 
 -- Load and Show Textures
@@ -36,7 +36,7 @@ local function CreateSimpleRareElite()
 		
 			SimpleRareElite:SetParent(TargetFrame)
 			SimpleRareElite.Texture = SimpleRareElite:CreateTexture('ARTWORK')				
-			SimpleRareElite:SetFrameLevel(fl)
+			SimpleRareElite:SetFrameLevel(12)
 			SimpleRareElite.Texture:SetAllPoints()					
 			
 			self:RegisterEvent('PLAYER_TARGET_CHANGED')
